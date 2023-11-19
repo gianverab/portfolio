@@ -1,13 +1,28 @@
-import { useState } from "react";
-import "./App.css";
+import { Navbar } from "./components";
+import {
+  About,
+  Contact,
+  Experience,
+  Header,
+  Skills,
+  Testimonial,
+  Work,
+} from "./container";
+import "./App.scss";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div></div>
-      <h1>Giancarlo Vera</h1>
-    </>
+    <div className="app">
+      <Navbar />
+      <Header />
+      <About />
+      <Work />
+      <Skills />
+      <Experience />
+      <Testimonial />
+      <Contact />
+    </div>
   );
-}
+};
 
 export default App;
