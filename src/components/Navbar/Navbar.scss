@@ -41,7 +41,6 @@
   li {
     margin: 0 1rem;
     cursor: pointer;
-    position: relative;
 
     flex-direction: column;
 
@@ -50,10 +49,6 @@
       height: 5px;
       background: transparent;
       border-radius: 50%;
-
-      margin-bottom: 5px;
-      position: absolute;
-      left: calc(50% - 2px);
     }
 
     a {
