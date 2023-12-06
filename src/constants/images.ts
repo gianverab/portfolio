@@ -5,6 +5,8 @@ import react from "../assets/react.png";
 import javascript from "../assets/javascript.png";
 import typescript from "../assets/typescript.png";
 import profile from "../assets/gian.jpg";
+import email from "../assets/email.png";
+import cellphone from "../assets/cellphone.png";
 
 export default {
   logo,
@@ -14,4 +16,6 @@ export default {
   javascript,
   typescript,
   profile,
+  email,
+  cellphone,
 };
