@@ -49,3 +49,19 @@ export type Skill = {
   _id: string;
   iconSrc: string;
 };
+
+// Define type for brand
+export type Brand = {
+  name: string;
+  _id: string;
+  imageUrl: string;
+};
+
+// Define type for testimonial
+export type Testimonial = {
+  name: string;
+  _id: string;
+  company: string;
+  feedback: string;
+  imgUrl: string;
+};
