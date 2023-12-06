@@ -4,7 +4,6 @@ export enum MenuItems {
   About = "ABOUT",
   Work = "WORK",
   Skills = "SKILLS",
-  Experience = "EXPERIENCE",
   Testimonials = "TESTIMONIALS",
   Contact = "CONTACT",
 }
@@ -26,4 +25,27 @@ export type Project = {
   tags: string[];
   title: string;
   _id: string;
+};
+
+// Define type for work experience
+export type WorkExperience = {
+  name: string;
+  description: string;
+  company: string;
+  _key: string;
+};
+
+// Define type for experience
+export type Experience = {
+  _id: string;
+  year: string;
+  works: WorkExperience[];
+};
+
+// Define type for skill
+export type Skill = {
+  name: string;
+  bgColor: string;
+  _id: string;
+  iconSrc: string;
 };

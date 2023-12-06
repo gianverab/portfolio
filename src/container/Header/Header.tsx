@@ -53,4 +53,6 @@ const Header: React.FC = () => {
   );
 };
 
-export default AppWrap(Header, "home");
+const HeaderContainer = AppWrap(Header, "home");
+
+export default HeaderContainer;
