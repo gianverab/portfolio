@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import { Project, WorkItems } from "../../lib/types";
 import "./Work.scss";
@@ -28,13 +28,11 @@ const Work: React.FC = () => {
 
     const getProjects = async () => {
       const data: Project[] = await client.fetch(query);
-      console.log(data);
       setProjects(data);
       setFilterProject(data);
     };
 
     getProjects();
-    console.log(workItems);
   }, []);
 
   const handleFilterProject = (item: string) => {
@@ -53,6 +51,7 @@ const Work: React.FC = () => {
       }
     }, 500);
   };
+
   return (
     <>
       <h2 className="head-text">
@@ -131,4 +130,10 @@ const Work: React.FC = () => {
   );
 };
 
-export default AppWrap(Work, "work");
+const WorkContainer = AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
+
+export default WorkContainer;
