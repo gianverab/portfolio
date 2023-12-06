@@ -65,3 +65,10 @@ export type Testimonial = {
   feedback: string;
   imgUrl: string;
 };
+
+// Define type for formdata
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
