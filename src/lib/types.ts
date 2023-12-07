@@ -66,6 +66,14 @@ export type Testimonial = {
   imgUrl: string;
 };
 
+// Define type for testimonial
+export type About = {
+  title: string;
+  description: string;
+  _id: string;
+  imageUrl: string;
+};
+
 // Define type for formdata
 export type FormData = {
   name: string;

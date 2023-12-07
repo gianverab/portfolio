@@ -1,3 +1,10 @@
+#contact .app__wrapper {
+  padding: 8rem 1rem 2rem;
+  @media screen and (max-width: 480px) {
+    padding: 6rem 1rem 2rem;
+  }
+}
+
 .app__contact {
   flex: 1;
   width: 100%;

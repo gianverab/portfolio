@@ -50,6 +50,9 @@ const Testimonials: React.FC = () => {
 
   return (
     <>
+      <h2 className="head-text">
+        What my clients <span>are saying</span>
+      </h2>
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">
@@ -109,7 +112,7 @@ const Testimonials: React.FC = () => {
 };
 
 const TestimonialsContainer = AppWrap(
-  MotionWrap(Testimonials, "app__testimonials"),
+  MotionWrap(Testimonials, "app__testimonial"),
   "testimonials",
   "app__primarybg"
 );

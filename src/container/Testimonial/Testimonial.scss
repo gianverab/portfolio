@@ -1,7 +1,20 @@
+#testimonials .app__wrapper {
+  padding: 8rem 1rem 2rem;
+  @media screen and (max-width: 480px) {
+    padding: 6rem 1rem 2rem;
+  }
+}
+
 .app__testimonial {
   flex: 1;
   width: 100%;
   flex-direction: column;
+
+  .head-text {
+    @media screen and (max-width: 480px) {
+      padding: 0 2rem;
+    }
+  }
 }
 
 .app__testimonial-item {
@@ -13,8 +26,12 @@
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-
+  margin-top: 4rem;
   transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 480px) {
+    margin-top: 2rem;
+  }
 
   img {
     width: 100px;

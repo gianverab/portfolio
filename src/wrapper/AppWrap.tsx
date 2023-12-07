@@ -15,7 +15,7 @@ const AppWrap = (
           <Component />
 
           <div className="copyright">
-            <p className="p-text">@2023 Giancarlo Vera</p>
+            <p className="p-text">@2023 GianVeraB</p>
             <p className="p-text">All rights reserved</p>
           </div>
         </div>
