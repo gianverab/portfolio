@@ -55,7 +55,7 @@ const Work: React.FC = () => {
   return (
     <>
       <h2 className="head-text">
-        My Creative <span>Portfolio</span>
+        What I <span>have done</span>
       </h2>
       <div className="app__work-filter">
         {workItems.map((item, index) => (

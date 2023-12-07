@@ -1,44 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
+import { About } from "../../lib/types";
+import { client } from "../../client";
 
-const About: React.FC = () => {
+const Abouts: React.FC = () => {
+  const [abouts, setAbouts] = useState<About[]>([]);
+
+  useEffect(() => {
+    const query = `
+  *[_type == "about"] {
+    title,
+      description,
+      _id,
+      "imageUrl": imgUrl.asset->url
+  }`;
+
+    const getAbouts = async () => {
+      const data: About[] = await client.fetch(query);
+      setAbouts(data);
+    };
+
+    getAbouts();
+  }, []);
+
   return (
     <>
       <h2 className="head-text">
-        I Know that <span>Good Apps</span> <br />
-        means <span>Good Business</span>
+        What can<span> I do?</span>
       </h2>
-      <div className="app__profile">
-        <motion.div
-          whileInView={{ x: [100, 0], opacity: [0, 1] }}
-          transition={{ duration: 0.5 }}
-          className="app__profile-item"
-        >
-          <p className="p-text">
-            I have over 6 years of experience in frontend development. With a
-            keen eye for detail and a strong commitment to best practices, I
-            have collaborated with designers, product managers, and other
-            developers to create high-quality web applications.
-          </p>
-          <br />
-          <p className="p-text">
-            My expertise in JavaScript and React has allowed me to build complex
-            applications, and to deliver fast, responsive, and accessible
-            websites.{" "}
-            {/* I am always eager to stay up-to-date with the latest web
-            development trends and technologies, and I approach every project
-            with a growth mindset. */}
-          </p>
-        </motion.div>
+      <div className="app__profiles">
+        {abouts.map((about) => (
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5, type: "tween" }}
+            className="app__profile-item"
+            key={about._id}
+          >
+            <img src={about.imageUrl} alt={about.title} />
+            <h2 className="bold-text" style={{ marginTop: 20 }}>
+              {about.title}
+            </h2>
+            <p className="p-text" style={{ marginTop: 10 }}>
+              {about.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </>
   );
 };
 
 const AboutContainer = AppWrap(
-  MotionWrap(About, "app__about"),
+  MotionWrap(Abouts, "app__about"),
   "about",
   "app__whitebg"
 );

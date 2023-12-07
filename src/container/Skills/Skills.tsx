@@ -4,12 +4,13 @@ import { Tooltip } from "react-tooltip";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import { Experience, Skill } from "../../lib/types";
-import "./Skills.scss";
 import { sortbyYear } from "../../lib/utils";
+import "./Skills.scss";
 
 const Skills: React.FC = () => {
   const [skills, setSkills] = useState<Skill[]>([]);
   const [experiences, setExperiences] = useState<Experience[]>([]);
+
   useEffect(() => {
     const query = `
     *[_type == "experiences"] {

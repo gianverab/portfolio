@@ -5,13 +5,23 @@ const SocialMedia: React.FC = () => {
   return (
     <div className="app__social">
       <div>
-        <BsGithub />
+        <a href="https://github.com/gianverab" target="_blank" rel="noreferrer">
+          <BsGithub />
+        </a>
       </div>
       <div>
-        <BsLinkedin />
+        <a
+          href="https://www.linkedin.com/in/gianvera/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BsLinkedin />
+        </a>
       </div>
       <div>
-        <BsTwitter />
+        <a href="https://twitter.com/gianvera" target="_blank" rel="noreferrer">
+          <BsTwitter />
+        </a>
       </div>
     </div>
   );

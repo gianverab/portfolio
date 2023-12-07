@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       >
         <h1>Hello, my name is Giancarlo Vera</h1>
         <p>
-          Frontend Developer with expertise in building React and TypeScript
+          Frontend Developer with experience developing React and TypeScript
           applications.
         </p>
       </motion.div>
