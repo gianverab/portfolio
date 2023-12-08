@@ -11,9 +11,10 @@ export enum MenuItems {
 // Define TypeScript enum for work items
 export enum WorkItems {
   All = "All",
-  Web = "Web App",
   React = "React",
   TypeScript = "TypeScript",
+  JavaScript = "JavaScript",
+  Web = "Web App",
 }
 
 // Define type for projects
