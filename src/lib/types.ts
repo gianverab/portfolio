@@ -14,7 +14,8 @@ export enum WorkItems {
   React = "React",
   TypeScript = "TypeScript",
   JavaScript = "JavaScript",
-  Web = "Web App",
+  SPA = "SPA",
+  Web = "Website",
 }
 
 // Define type for projects
