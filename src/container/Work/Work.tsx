@@ -10,7 +10,7 @@ const Work: React.FC = () => {
   // Convert enum into an array
   const workItems: string[] = Object.values(WorkItems);
   const [activeFilter, setActiveFilter] = useState<string>("All");
-  const [animateCard, setAnimateCard] = useState([{ y: 0, opacity: 1 }]);
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [projects, setProjects] = useState<Project[]>([]);
   const [filterProject, setFilterProject] = useState<Project[]>([]);
 
@@ -38,10 +38,10 @@ const Work: React.FC = () => {
   const handleFilterProject = (item: string) => {
     setActiveFilter(item);
     console.log(item);
-    setAnimateCard([{ y: 100, opacity: 0 }]);
+    setAnimateCard({ y: 100, opacity: 0 });
 
     setTimeout(() => {
-      setAnimateCard([{ y: 0, opacity: 1 }]);
+      setAnimateCard({ y: 0, opacity: 1 });
       if (item === "ALL") {
         setFilterProject(projects);
       } else {
