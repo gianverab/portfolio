@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+import { client } from "../../sanity/client";
 import "./Contact.scss";
 import { FormData } from "../../lib/types";
 

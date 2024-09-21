@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client, urlFor } from "../../client";
+import { client, urlFor } from "../../sanity/client";
 import { Brand, Testimonial } from "../../lib/types";
 import "./Testimonial.scss";
 

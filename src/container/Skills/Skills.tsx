@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+import { client } from "../../sanity/client";
 import { Experience, Skill } from "../../lib/types";
 import { sortbyYear } from "../../lib/utils";
 import "./Skills.scss";

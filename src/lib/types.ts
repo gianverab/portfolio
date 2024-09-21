@@ -12,8 +12,11 @@ export enum MenuItems {
 export enum WorkItems {
   All = "All",
   React = "React",
+  ReactNative = "React Native",
   TypeScript = "TypeScript",
   JavaScript = "JavaScript",
+  XState = "XState",
+  Sanity = "Sanity",
   SPA = "SPA",
   Web = "Website",
 }

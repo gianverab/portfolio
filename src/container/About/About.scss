@@ -1,5 +1,6 @@
 #about .app__wrapper {
-  @media screen and (max-width: 900px) {
+  padding: 8rem 2rem;
+  @media screen and (max-width: 480px) {
     padding: 6rem 1rem 2rem;
   }
 }
@@ -19,7 +20,7 @@
 }
 
 .app__profile-item {
-  width: 190px;
+  width: 240px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

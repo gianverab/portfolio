@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+import { client } from "../../sanity/client";
 import { Project, WorkItems } from "../../lib/types";
 import "./Work.scss";
 

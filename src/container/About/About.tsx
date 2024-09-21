@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
 import { About } from "../../lib/types";
-import { client } from "../../client";
+import { client } from "../../sanity/client";
 
 const Abouts: React.FC = () => {
   const [abouts, setAbouts] = useState<About[]>([]);
