@@ -1,20 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --font-base: "Montserrat", sans-serif;
+    --font-base: 'Montserrat', sans-serif;
 
-  --primary-color: #edf2f8;
-  --secondary-color: #313bac;
-  --black-color: #030303;
-  --lightGray-color: #e4e4e4;
-  --gray-color: #6b7688;
-  --brown-color: #46364a;
-  --white-color: #ffffff;
+    --bg: #edf2f8;
+    --bg-alt: #ffffff;
+    --primary: #313bac;
+    --secondary: #3e4bd5;
+    --text-main: #404756;
+    --text-alt: #6b7688;
+    --text-dark: #23272f;
+    --text-light: #cbcbcb;
+    --card-bg: #ffffff;
+    --card-alt: #f2f7fb;
+    --card-border: #e4e4e4;
+    --shadow-soft: rgba(15, 23, 42, 0.08);
+    --brown: #46364a;
+}
+
+[data-theme='dark'] {
+    --bg: #020817;
+    --bg-alt: #020617;
+    --text-main: #e5e7eb;
+    --text-alt: #9ca3af;
+    --text-dark: #f3f4f6;
+    --text-light: #6b7280;
+    --primary: #38bdf8;
+    --card-bg: #020617;
+    --card-border: rgba(148, 163, 184, 0.35);
+    --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.9);
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
 }
