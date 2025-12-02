@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 
-.app__work-filter {
+.app__work_filter {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -20,11 +20,11 @@
 
     margin: 4rem 0 2rem;
 
-    .app__work-filter-item {
+    &-item {
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         background-color: var(--bg-alt);
-        color: var(--text-dark);
+        color: var(--text-main);
         font-weight: 800;
 
         cursor: pointer;
@@ -32,8 +32,8 @@
         margin: 0.5rem;
 
         &:hover {
-            background-color: var(--primary);
-            color: #fff;
+            background-color: var(--button-bg);
+            color: var(--button-text);
         }
 
         @media screen and (min-width: 2000px) {
@@ -43,18 +43,18 @@
     }
 
     .item-active {
-        background-color: var(--primary);
-        color: #fff;
+        background-color: var(--button-bg);
+        color: var(--button-text);
     }
 }
 
-.app__work-portfolio {
+.app__work_portfolio {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-    .app__work-item {
+    &-item {
         width: 320px;
         flex-direction: column;
         margin: 2rem;
@@ -80,75 +80,79 @@
             margin: 1rem;
         }
     }
-}
 
-.app__work-img {
-    width: 100%;
-    height: 230px;
-    position: relative;
-
-    img {
+    &-img {
         width: 100%;
-        height: 100%;
-        border-radius: 0.5rem;
-        object-fit: cover;
-    }
+        height: 230px;
+        position: relative;
 
-    @media screen and (min-width: 2000px) {
-        height: 350px;
-    }
-}
-
-.app__work-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0.5rem;
-    opacity: 0;
-    transition: all 0.3s ease;
-
-    div {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: var(--bg-alt);
-
-        margin: 1rem;
-        font-family: var(--font-base);
-        font-weight: 800;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        svg {
-            width: 50%;
-            height: 50%;
-            color: var(--bg-alt);
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+            object-fit: cover;
         }
-    }
-}
-
-.app__work-content {
-    padding: 0.5rem;
-    width: 100%;
-    position: relative;
-    flex-direction: column;
-
-    h4 {
-        margin-top: 1rem;
-        line-height: 1.5;
 
         @media screen and (min-width: 2000px) {
-            margin-top: 3rem;
+            height: 350px;
         }
     }
 
-    .app__work-tag {
+    &-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0.5rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        div {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--bg-alt);
+
+            margin: 1rem;
+            font-family: var(--font-base);
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            svg {
+                width: 50%;
+                height: 50%;
+                color: var(--svg-bg);
+            }
+        }
+    }
+
+    &-content {
+        padding: 0.5rem;
+        width: 100%;
+        position: relative;
+        flex-direction: column;
+
+        h4 {
+            margin-top: 1rem;
+            line-height: 1.5;
+
+            @media screen and (min-width: 2000px) {
+                margin-top: 3rem;
+            }
+        }
+
+        p {
+            color: var(--text-alt);
+        }
+    }
+
+    &-tag {
         position: absolute;
         padding: 0.5rem 1rem;
         border-radius: 10px;

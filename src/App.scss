@@ -107,7 +107,7 @@
     flex-direction: column;
     padding: 1rem;
 
-    div {
+    button {
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -118,6 +118,12 @@
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        a {
+            width: 15px;
+            height: 15px;
+        }
 
         svg {
             width: 15px;
@@ -162,7 +168,8 @@
         margin: 0.5rem;
         transition: background-color 0.2s ease-in-out;
 
-        &:hover {
+        &:hover,
+        &.active-dot {
             background-color: var(--primary);
         }
 

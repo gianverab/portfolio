@@ -5,11 +5,14 @@ import { AppWrap, MotionWrap } from '../../wrapper'
 import { client } from '../../sanity/client'
 import { Experience, Skill } from '../../lib/types'
 import { sortbyYear } from '../../lib/utils'
+import { useTheme } from '../../context/ThemeContext'
 import './Skills.scss'
+import { images } from '../../constants'
 
 const Skills: React.FC = () => {
     const [skills, setSkills] = useState<Skill[]>([])
     const [experiences, setExperiences] = useState<Experience[]>([])
+    const { theme } = useTheme()
 
     useEffect(() => {
         const query = `
@@ -48,41 +51,55 @@ const Skills: React.FC = () => {
             <h2 className="head-text">
                 Skills & <span>Experience</span>
             </h2>
-            <div className="app__skills-container">
-                <motion.div className="app__skills-list">
+            <div className="app__skills__container">
+                <motion.div className="app__skills__list">
                     {skills.map((skill) => (
                         <motion.div
                             whileInView={{ opacity: [0, 1] }}
                             transition={{ duration: 0.5 }}
-                            className="app__skills-item app__flex"
+                            className="app__skills__list-item app__flex"
                             key={skill._id}
                         >
                             <div
                                 className="app__flex"
-                                style={{ backgroundColor: skill.bgColor }}
+                                style={
+                                    theme === 'dark'
+                                        ? {
+                                              backgroundColor: '#232730',
+                                          }
+                                        : { backgroundColor: skill.bgColor }
+                                }
                             >
-                                <img src={skill.iconSrc} alt={skill.name} />
+                                <img
+                                    src={
+                                        theme === 'dark' &&
+                                        skill.name === 'Next.js'
+                                            ? images.nextjsWhite
+                                            : skill.iconSrc
+                                    }
+                                    alt={skill.name}
+                                />
                             </div>
                             <p className="p-text">{skill.name}</p>
                         </motion.div>
                     ))}
                 </motion.div>
-                <div className="app__skills-exp">
+                <div className="app__skills__exp">
                     {experiences.map((experience) => (
                         <motion.div
-                            className="app__skills-exp-item"
+                            className="app__skills__exp-item"
                             key={experience._id}
                         >
-                            <div className="app__skills-exp-year">
+                            <div className="app__skills__exp-year">
                                 <p className="bold-text">{experience.year}</p>
                             </div>
-                            <motion.div className="app__skills-exp-works">
+                            <motion.div className="app__skills__exp-works">
                                 {experience.works.map((work) => (
                                     <div key={work._key}>
                                         <motion.div
                                             whileInView={{ opacity: [0, 1] }}
                                             transition={{ duration: 0.5 }}
-                                            className="app__skills-exp-work"
+                                            className="app__skills__exp-work"
                                             data-tooltip-id={work._key}
                                             data-tooltip-content={
                                                 work.description
@@ -97,7 +114,7 @@ const Skills: React.FC = () => {
                                         </motion.div>
                                         <Tooltip
                                             id={work._key}
-                                            className="skills-tooltip"
+                                            className="app__skills__exp-tooltip"
                                         />
                                     </div>
                                 ))}

@@ -101,9 +101,9 @@
         padding: 1rem 2rem;
         border-radius: 10px;
         border: none;
-        background-color: var(--primary);
+        background-color: var(--button-bg);
         font-weight: 500;
-        color: var(--bg-alt);
+        color: var(--button-text);
         outline: none;
         margin: 2rem 0 0 0;
         font-family: var(--font-base);
@@ -111,7 +111,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: var(--secondary);
+            background-color: var(--button-hover);
         }
     }
 

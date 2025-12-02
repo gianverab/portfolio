@@ -5,6 +5,10 @@
     background-position: center;
     background-repeat: repeat;
 
+    &.dark-theme {
+        background: url('../../assets/bgDark.jpg');
+    }
+
     // disable the default padding styles
     .app__wrapper {
         padding: 0;
@@ -44,10 +48,16 @@
     height: 100%;
     margin: 0 2rem;
     text-align: center;
+    color: var(--text-main);
 
     h1 {
         font-size: 48px;
         font-weight: 600;
+
+        span {
+            font-size: 30px;
+            font-weight: 400;
+        }
 
         @media screen and (max-width: 480px) {
             font-size: 36px;
@@ -59,6 +69,7 @@
         font-weight: 400;
         margin: 1rem 0;
         line-height: 1.5;
+        color: var(--text-alt);
 
         @media screen and (max-width: 480px) {
             font-size: 22px;
@@ -90,12 +101,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: var(--bg-alt);
+        background: var(--bg);
         box-shadow: 0px 0px 20px var(--shadow-soft);
 
         img {
             width: 60%;
-            height: 60%;
+            height: 'auto';
         }
     }
 
