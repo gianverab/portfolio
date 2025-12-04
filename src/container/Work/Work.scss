@@ -1,14 +1,27 @@
 #work .app__wrapper {
     padding: 8rem 2rem;
-    @media screen and (max-width: 480px) {
-        padding: 6rem 1rem 2rem;
+
+    @media screen and (min-width: 1200px) {
+        padding: 8rem 4rem 2rem;
     }
+
+    @media screen and (max-width: 768px) {
+        padding: 8rem 1rem 4rem;
+    }
+}
+
+#work .copyright {
+    display: none;
 }
 
 .app__works {
     flex: 1;
     width: 100%;
     flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+        gap: 3rem;
+    }
 }
 
 .app__work_filter {
@@ -17,8 +30,13 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-
     margin: 4rem 0 2rem;
+
+    @media screen and (max-width: 768px) {
+        margin: 0;
+        justify-content: space-between;
+        padding: 0 0.5rem;
+    }
 
     &-item {
         padding: 0.5rem 1rem;
@@ -52,7 +70,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+
+    @media screen and (max-width: 768px) {
+        gap: 2rem;
+    }
 
     &-item {
         width: 320px;
@@ -64,6 +86,15 @@
         color: #000;
         cursor: pointer;
         transition: all 0.3s ease;
+        justify-content: flex-start !important;
+
+        @media screen and (max-width: 768px) {
+            margin: 0;
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 768px) {
+            width: 360px;
+        }
 
         &:hover {
             box-shadow: 0 18px 45px var(--shadow-soft);

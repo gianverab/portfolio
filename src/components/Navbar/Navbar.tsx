@@ -46,39 +46,41 @@ const Navbar: React.FC = () => {
                     </li>
                 ))}
             </ul>
-            <div className="app__navbar-actions">
-                <button
-                    type="button"
-                    aria-label="Toggle dark mode"
-                    className="theme-toggle"
-                    onClick={toggleTheme}
-                >
-                    {theme === 'light' ? <DarkIcon /> : <LightIcon />}
-                </button>
-            </div>
-            <div className="app__navbar-menu">
-                <HiMenu onClick={() => setToggleMenu(true)} />
-
-                {toggleMenu && (
-                    <motion.div
-                        whileInView={{ x: [120, 0] }}
-                        transition={{ duration: 0.5, ease: 'easeOut' }}
+            <div className="app__navbar-buttons">
+                <div className="app__navbar-actions">
+                    <button
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        className="theme-toggle"
+                        onClick={toggleTheme}
                     >
-                        <HiX onClick={() => setToggleMenu(false)} />
-                        <ul>
-                            {menuItems.map((item) => (
-                                <li key={item}>
-                                    <a
-                                        href={`#${item.toLowerCase()}`}
-                                        onClick={() => setToggleMenu(false)}
-                                    >
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
+                        {theme === 'light' ? <DarkIcon /> : <LightIcon />}
+                    </button>
+                </div>
+                <div className="app__navbar-menu">
+                    <HiMenu onClick={() => setToggleMenu(true)} />
+
+                    {toggleMenu && (
+                        <motion.div
+                            whileInView={{ x: [120, 0] }}
+                            transition={{ duration: 0.5, ease: 'easeOut' }}
+                        >
+                            <HiX onClick={() => setToggleMenu(false)} />
+                            <ul>
+                                {menuItems.map((item) => (
+                                    <li key={item}>
+                                        <a
+                                            href={`#${item.toLowerCase()}`}
+                                            onClick={() => setToggleMenu(false)}
+                                        >
+                                            {item}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    )}
+                </div>
             </div>
         </nav>
     )

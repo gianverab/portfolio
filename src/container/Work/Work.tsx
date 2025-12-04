@@ -12,7 +12,7 @@ const Work: React.FC = () => {
     const [activeFilter, setActiveFilter] = useState<string>('All')
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
     const [projects, setProjects] = useState<Project[]>([])
-    const [filterProject, setFilterProject] = useState<Project[]>([])
+    const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
 
     useEffect(() => {
         const query = `
@@ -28,14 +28,17 @@ const Work: React.FC = () => {
 
         const getProjects = async () => {
             const data: Project[] = await client.fetch(query)
-            setProjects(data)
-            setFilterProject(data)
+            const sortedData = data.sort((a, b) => {
+                return a.title.localeCompare(b.title)
+            })
+            setProjects(sortedData)
+            setFilteredProjects(sortedData)
         }
 
         getProjects()
     }, [])
 
-    const handleFilterProject = (item: string) => {
+    const handleFilteredProjects = (item: string) => {
         setActiveFilter(item)
         console.log(item)
         setAnimateCard({ y: 100, opacity: 0 })
@@ -43,9 +46,9 @@ const Work: React.FC = () => {
         setTimeout(() => {
             setAnimateCard({ y: 0, opacity: 1 })
             if (item === 'ALL') {
-                setFilterProject(projects)
+                setFilteredProjects(projects)
             } else {
-                setFilterProject(
+                setFilteredProjects(
                     projects.filter((project) => project.tags.includes(item))
                 )
             }
@@ -61,7 +64,7 @@ const Work: React.FC = () => {
                 {workItems.map((item, index) => (
                     <div
                         key={`${index}-${item}`}
-                        onClick={() => handleFilterProject(item)}
+                        onClick={() => handleFilteredProjects(item)}
                         className={`app__work_filter-item app__flex ${
                             activeFilter === item ? 'item-active' : ''
                         }`}
@@ -75,7 +78,7 @@ const Work: React.FC = () => {
                 transition={{ duration: 0.5, delayChildren: 0.5 }}
                 className="app__work_portfolio"
             >
-                {filterProject.map((project) => (
+                {filteredProjects.map((project) => (
                     <div
                         className="app__work_portfolio-item app__flex"
                         key={project._id}

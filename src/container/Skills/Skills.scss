@@ -1,16 +1,27 @@
 #skills .app__wrapper {
     padding: 8rem 2rem;
-    @media screen and (max-width: 480px) {
-        padding: 6rem 1rem 2rem;
-    }
-    @media screen and (min-width: 481px) and (max-width: 900px) {
+
+    @media screen and (min-width: 481px) and (max-width: 768px) {
         padding: 8rem 1rem 2rem;
     }
+
+    @media screen and (max-width: 480px) {
+        padding: 8rem 1rem 4rem;
+    }
 }
+
+#skills .copyright {
+    display: none;
+}
+
 .app__skills {
     flex: 1;
     width: 100%;
     flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+        gap: 3rem;
+    }
 
     &__container {
         width: 60%;
@@ -23,6 +34,10 @@
             width: 100%;
             flex-direction: column;
         }
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+            gap: 3rem;
+        }
     }
 
     &__list {
@@ -31,13 +46,22 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
-
         margin-right: 5rem;
 
         @media screen and (max-width: 900px) {
             margin-right: 0;
             justify-content: center;
             align-items: center;
+            gap: 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        @media screen and (max-width: 480px) {
+            gap: 2rem;
         }
 
         &-item {
@@ -65,7 +89,7 @@
                     height: 150px;
                 }
 
-                @media screen and (max-width: 480px) {
+                @media screen and (max-width: 600px) {
                     width: 70px;
                     height: 70px;
                 }
@@ -83,6 +107,10 @@
                     margin-top: 1rem;
                 }
             }
+
+            @media screen and (max-width: 768px) {
+                margin: 0;
+            }
         }
     }
 
@@ -98,6 +126,12 @@
             align-items: center;
         }
 
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+            gap: 1rem;
+            padding: 0 2rem;
+        }
+
         &-item {
             width: 100%;
             display: flex;
@@ -106,8 +140,8 @@
             align-items: flex-start;
             margin: 1rem 0;
 
-            @media screen and (max-width: 480px) {
-                max-width: 300px;
+            @media screen and (max-width: 768px) {
+                margin: 0;
             }
         }
 
@@ -141,6 +175,10 @@
             p {
                 font-weight: 800;
                 color: var(--primary);
+            }
+
+            @media screen and (max-width: 768px) {
+                margin-right: 2rem;
             }
 
             @media screen and (max-width: 480px) {
