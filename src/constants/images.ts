@@ -6,7 +6,7 @@ import javascript from '../assets/javascript.png'
 import typescript from '../assets/typescript.png'
 import nextjs from '../assets/nextjs.png'
 import nextjsWhite from '../assets/nextjs-white.png'
-import profile from '../assets/gian.jpg'
+import profile from '../assets/gian_profile.png'
 import email from '../assets/email.png'
 import cellphone from '../assets/cellphone.png'
 
