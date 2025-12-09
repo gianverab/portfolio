@@ -1,9 +1,23 @@
 #contact .app__wrapper {
     padding: 8rem 1rem 2rem;
 
+    @media screen and (max-width: 768px) {
+        padding: 4rem 5rem 1rem;
+        gap: 2rem;
+    }
+
     @media screen and (max-width: 600px) {
         padding: 8rem 1rem 1rem;
         gap: 2rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 9rem 1rem 1rem;
+        gap: 2rem;
+    }
+
+    @media screen and (max-width: 360px) {
+        padding: 6rem 1rem 1rem;
     }
 }
 
@@ -12,8 +26,16 @@
     width: 100%;
     flex-direction: column;
 
+    @media screen and (max-width: 1024px) {
+        gap: 3rem;
+    }
+
     @media screen and (max-width: 768px) {
         gap: 3rem;
+    }
+
+    @media screen and (max-width: 360px) {
+        gap: 2.5rem;
     }
 
     &-cards {
@@ -23,6 +45,12 @@
         align-items: center;
         flex-wrap: wrap;
         margin: 4em 2rem 2rem;
+
+        @media screen and (max-width: 1024px) {
+            width: 66%;
+            margin: 0;
+            justify-content: space-between;
+        }
 
         @media screen and (max-width: 768px) {
             width: 100%;
@@ -59,10 +87,21 @@
             margin: 0;
         }
 
+        @media screen and (max-width: 360px) {
+            min-width: auto;
+            padding: 1rem 0.5rem;
+        }
+
         img {
             width: 40px;
             height: 40px;
             margin: 0 0.7rem;
+
+            @media screen and (max-width: 360px) {
+                width: 32px;
+                height: 32px;
+                margin-left: 0.5rem;
+            }
         }
 
         p {
@@ -73,6 +112,10 @@
             font-weight: 500;
 
             @media screen and (min-width: 601px) and (max-width: 768px) {
+                font-size: 1rem;
+            }
+
+            @media screen and (max-width: 360px) {
                 font-size: 1rem;
             }
         }
@@ -104,6 +147,10 @@
                 font-family: var(--font-base);
                 color: var(--text-main);
                 outline: none;
+
+                @media screen and (max-width: 360px) {
+                    font-size: 1rem;
+                }
             }
 
             textarea {
@@ -114,7 +161,7 @@
                 box-shadow: 0 0 12px var(--shadow-soft);
             }
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 1024px) {
                 margin: 0;
             }
         }
@@ -140,6 +187,16 @@
                 width: 100%;
                 text-align: center;
             }
+
+            @media screen and (max-width: 360px) {
+                margin-top: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 66%;
+            margin: 0;
+            gap: 1rem;
         }
 
         @media screen and (max-width: 768px) {

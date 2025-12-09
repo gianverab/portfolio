@@ -31,7 +31,7 @@ const Header: React.FC = () => {
                 </h1>
                 <p>
                     Frontend Developer with experience developing React and
-                    TypeScript applications.
+                    Next.js applications.
                 </p>
             </motion.div>
             <motion.div

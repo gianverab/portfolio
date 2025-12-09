@@ -17,7 +17,7 @@
     --card-border-alt: transparent;
     --shadow-soft: rgba(15, 23, 42, 0.08);
     --shadow: rgba(15, 23, 42, 0.12);
-    --navigation-bg: rgba(255, 255, 255, 0.8);
+    --navigation-bg: rgba(255, 255, 255, 0.9);
     --soft-bg: rgba(15, 23, 42, 0.04);
     --svg-bg: #ffffff;
     --tooltip-bg: #ffffff;
@@ -40,7 +40,7 @@
     --card-border-alt: rgba(255, 255, 255, 0.18);
     --shadow-soft: rgba(15, 23, 42, 0.08);
     --shadow: rgba(15, 23, 42, 0.12);
-    --navigation-bg: rgba(26, 29, 36, 0.8);
+    --navigation-bg: rgba(26, 29, 36, 0.9);
     --soft-bg: rgba(255, 255, 255, 0.08);
     --svg-bg: #ffffff;
     --tooltip-bg: #232730;

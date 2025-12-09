@@ -19,7 +19,6 @@ export enum WorkItems {
     Sanity = 'Sanity',
     SPA = 'SPA',
     Web = 'Website',
-    MobileApp = 'Mobile App',
 }
 
 // Define type for projects
