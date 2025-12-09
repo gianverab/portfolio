@@ -1,4 +1,3 @@
-import logo from '../assets/logo.png'
 import bgIMG from '../assets/bgIMG.png'
 import bgWhite from '../assets/bgWhite.png'
 import react from '../assets/react.png'
@@ -11,7 +10,6 @@ import email from '../assets/email.png'
 import cellphone from '../assets/cellphone.png'
 
 export default {
-    logo,
     bgIMG,
     bgWhite,
     react,

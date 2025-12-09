@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
-import { images } from '../../constants'
 import { MenuItems } from '../../lib/types'
 import { useTheme } from '../../context/ThemeContext'
 import './Navbar.scss'
 import LightIcon from '../../svg/LightIcon'
 import DarkIcon from '../../svg/DarkIcon'
+import Logo from '../../svg/Logo'
 
 const Navbar: React.FC = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
@@ -19,11 +19,13 @@ const Navbar: React.FC = () => {
         setActiveMenuItem(menuItem)
     }
 
+    const isDark = theme === 'dark' ? true : false
+
     return (
         <nav className="app__navbar">
             <div className="app__navbar-logo">
-                <a href="#home">
-                    <img src={images.logo} alt="Gianverab's logo" />
+                <a href="#home" aria-label={`Gianverab's logo`}>
+                    <Logo dark={isDark} />
                 </a>
             </div>
             <ul className="app__navbar-links">
