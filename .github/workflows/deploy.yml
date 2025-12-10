@@ -17,6 +17,8 @@ concurrency:
 jobs:
     build:
         runs-on: ubuntu-latest
+        env:
+            VITE_REACT_APP_SANITY_PROJECT_ID: ${{ secrets.VITE_REACT_APP_SANITY_PROJECT_ID }}
         steps:
             - uses: actions/checkout@v4
 
