@@ -19,13 +19,13 @@ const Navbar: React.FC = () => {
         setActiveMenuItem(menuItem)
     }
 
-    const isDark = theme === 'dark' ? true : false
+    const color = theme === 'dark' ? '#50b3da' : '#2e7cb7'
 
     return (
         <nav className="app__navbar">
             <div className="app__navbar-logo">
                 <a href="#home" aria-label={`Gianverab's logo`}>
-                    <Logo dark={isDark} />
+                    <Logo color={color} />
                 </a>
             </div>
             <ul className="app__navbar-links">
