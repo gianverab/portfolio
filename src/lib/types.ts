@@ -2,6 +2,7 @@
 export enum MenuItems {
     Home = 'HOME',
     About = 'ABOUT',
+    Solutions = 'SOLUTIONS',
     Work = 'WORK',
     Skills = 'SKILLS',
     Testimonials = 'TESTIMONIALS',
@@ -71,8 +72,16 @@ export type Testimonial = {
     imgUrl: string
 }
 
-// Define type for testimonial
+// Define type for about
 export type About = {
+    title: string
+    description: string
+    _id: string
+    imageUrl: string
+}
+
+// Define type for about
+export type Solution = {
     title: string
     description: string
     _id: string

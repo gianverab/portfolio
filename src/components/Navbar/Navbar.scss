@@ -100,13 +100,13 @@
             }
         }
 
-        @media screen and (max-width: 900px) {
+        @media screen and (max-width: 1024px) {
             display: none;
         }
     }
 
     &-buttons {
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1024px) {
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -225,12 +225,12 @@
                 }
             }
 
-            @media screen and (min-width: 900px) {
+            @media screen and (min-width: 1025px) {
                 display: none;
             }
         }
 
-        @media screen and (min-width: 900px) {
+        @media screen and (min-width: 1025px) {
             display: none;
         }
     }

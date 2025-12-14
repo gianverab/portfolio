@@ -4,6 +4,7 @@ import typescript from '../assets/typescript.webp'
 import nextjs from '../assets/nextjs.webp'
 import nextjsWhite from '../assets/nextjs-white.webp'
 import profile from '../assets/gian_profile.webp'
+import aboutPic from '../assets/gian_dev.webp'
 
 export default {
     react,
@@ -12,4 +13,5 @@ export default {
     nextjs,
     nextjsWhite,
     profile,
+    aboutPic,
 }
