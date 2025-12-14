@@ -10,16 +10,20 @@ const Solutions: React.FC = () => {
 
     useEffect(() => {
         const query = `
-  *[_type == "solution"] {
+  *[_type == "solutions"] {
     title,
       description,
       _id,
-      "imageUrl": imgUrl.asset->url
+      "imageUrl": imgUrl.asset->url,
+      order
   }`
 
         const getSolutions = async () => {
             const data: Solution[] = await client.fetch(query)
-            setSolutions(data)
+            const sortedData = data.sort((a, b) => {
+                return a.order - b.order
+            })
+            setSolutions(sortedData)
         }
 
         getSolutions()
@@ -40,12 +44,10 @@ const Solutions: React.FC = () => {
                         key={solution._id}
                     >
                         <img src={solution.imageUrl} alt={solution.title} />
-                        <h2 className="bold-text" style={{ marginTop: 20 }}>
-                            {solution.title}
-                        </h2>
-                        <p className="p-text" style={{ marginTop: 10 }}>
-                            {solution.description}
-                        </p>
+                        <div className="app__proposals-content">
+                            <h4 className="bold-text">{solution.title}</h4>
+                            <p className="p-text">{solution.description}</p>
+                        </div>
                     </motion.div>
                 ))}
             </div>
@@ -56,7 +58,7 @@ const Solutions: React.FC = () => {
 const SolutionsContainer = AppWrap(
     MotionWrap(Solutions, 'app__solutions'),
     'solutions',
-    'app__whitebg'
+    'app__primarybg'
 )
 
 export default SolutionsContainer

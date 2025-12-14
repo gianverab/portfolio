@@ -86,6 +86,7 @@ export type Solution = {
     description: string
     _id: string
     imageUrl: string
+    order: number
 }
 
 // Define type for formdata

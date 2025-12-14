@@ -132,9 +132,7 @@ const Work: React.FC = () => {
                         </div>
                         <div className="app__work_portfolio-content app__flex">
                             <h4 className="bold-text">{project.title}</h4>
-                            <p className="p-text" style={{ marginTop: 10 }}>
-                                {project.description}
-                            </p>
+                            <p className="p-text">{project.description}</p>
                             <div className="app__work_portfolio-tag app__flex">
                                 <p className="p-text">{project.tags[0]}</p>
                             </div>
