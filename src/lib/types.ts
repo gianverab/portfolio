@@ -72,15 +72,16 @@ export type Testimonial = {
     imgUrl: string
 }
 
-// Define type for about
-export type About = {
-    title: string
-    description: string
+// Define type for stats
+export type Stats = {
+    value: number
     _id: string
-    imageUrl: string
+    sign: string
+    label: string
+    order: number
 }
 
-// Define type for about
+// Define type for solution
 export type Solution = {
     title: string
     description: string

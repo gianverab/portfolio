@@ -1,37 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { AppWrap, MotionWrap } from '../../wrapper'
-import './About.scss'
-import { About } from '../../lib/types'
+import { Stats } from '../../lib/types'
 import { client } from '../../sanity/client'
 import { images } from '../../constants'
-
-const stats = [
-    { value: '7', sign: '+', label: 'years of experience' },
-    { value: '50', sign: '+', label: 'completed projects' },
-    { value: '36', sign: '+', label: 'total clients' },
-    { value: '60', sign: '+', label: 'applications built' },
-    { value: '96', sign: '%', label: 'satisfaction rate' },
-]
+import './About.scss'
 
 const Abouts: React.FC = () => {
-    const [abouts, setAbouts] = useState<About[]>([])
+    const [stats, setStats] = useState<Stats[]>([])
 
     useEffect(() => {
         const query = `
-  *[_type == "about"] {
-    title,
-      description,
-      _id,
-      "imageUrl": imgUrl.asset->url
-  }`
+    *[_type == "stats"] {
+        value,
+        _id,
+        sign,
+        label,
+        order,
+    }`
 
-        const getAbouts = async () => {
-            const data: About[] = await client.fetch(query)
-            setAbouts(data)
+        const getStats = async () => {
+            const data: Stats[] = await client.fetch(query)
+            const sortedData = data.sort((a, b) => {
+                return a.order - b.order
+            })
+            setStats(sortedData)
         }
 
-        getAbouts()
+        getStats()
     }, [])
 
     return (
@@ -86,17 +82,20 @@ const Abouts: React.FC = () => {
                 whileInView={{ opacity: [0, 1], y: [20, 0] }}
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
-                {stats.map((item) => (
-                    <div className="app__bio-stat" key={item.label}>
-                        <span className="app__bio-stat-value">
-                            {item.value}
-                        </span>
-                        <span className="app__bio-stat-sign">{item.sign}</span>
-                        <span className="app__bio-stat-label">
-                            {item.label}
-                        </span>
-                    </div>
-                ))}
+                {stats &&
+                    stats.map((item) => (
+                        <div className="app__bio-stat" key={item._id}>
+                            <span className="app__bio-stat-value">
+                                {item.value}
+                            </span>
+                            <span className="app__bio-stat-sign">
+                                {item.sign}
+                            </span>
+                            <span className="app__bio-stat-label">
+                                {item.label}
+                            </span>
+                        </div>
+                    ))}
             </motion.div>
         </>
     )
