@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { images } from '../../constants'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { client } from '../../sanity/client'
 import './Contact.scss'
 import { FormData } from '../../lib/types'
+import EmailIcon from '../../svg/EmailIcon'
+import PhoneIcon from '../../svg/PhoneIcon'
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
@@ -51,13 +52,13 @@ const Contact: React.FC = () => {
 
             <div className="app__contact-cards">
                 <div className="app__contact-card ">
-                    <img src={images.email} alt="email" />
+                    <EmailIcon />
                     <a href="mailto:gianverab@gmail.com" className="p-text">
                         gianverab@gmail.com
                     </a>
                 </div>
                 <div className="app__contact-card">
-                    <img src={images.cellphone} alt="phone" />
+                    <PhoneIcon />
                     <a href="tel:+51 1 989207668" className="p-text">
                         +51 1 989207668
                     </a>
@@ -116,7 +117,7 @@ const Contact: React.FC = () => {
 const ContactContainer = AppWrap(
     MotionWrap(Contact, 'app__contact'),
     'contact',
-    'app__whitebg'
+    'app__primarybg'
 )
 
 export default ContactContainer

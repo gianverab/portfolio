@@ -1,12 +1,16 @@
 #home {
     position: relative;
-    background: url('../../assets/bgIMG.png');
+    background: url('../../assets/bgIMG.webp');
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
 
     &.dark-theme {
-        background: url('../../assets/bgDark.jpg');
+        position: relative;
+        background: url('../../assets/bgDark.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
     }
 
     .app__wrapper {

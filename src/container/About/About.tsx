@@ -1,54 +1,102 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { AppWrap, MotionWrap } from '../../wrapper'
-import './About.scss'
-import { About } from '../../lib/types'
+import { Stats } from '../../lib/types'
 import { client } from '../../sanity/client'
+import { images } from '../../constants'
+import './About.scss'
 
 const Abouts: React.FC = () => {
-    const [abouts, setAbouts] = useState<About[]>([])
+    const [stats, setStats] = useState<Stats[]>([])
 
     useEffect(() => {
         const query = `
-  *[_type == "about"] {
-    title,
-      description,
-      _id,
-      "imageUrl": imgUrl.asset->url
-  }`
+    *[_type == "stats"] {
+        value,
+        _id,
+        sign,
+        label,
+        order,
+    }`
 
-        const getAbouts = async () => {
-            const data: About[] = await client.fetch(query)
-            setAbouts(data)
+        const getStats = async () => {
+            const data: Stats[] = await client.fetch(query)
+            const sortedData = data.sort((a, b) => {
+                return a.order - b.order
+            })
+            setStats(sortedData)
         }
 
-        getAbouts()
+        getStats()
     }, [])
 
     return (
         <>
             <h2 className="head-text">
-                What can<span> I do?</span>
+                Who<span> I am</span>
             </h2>
-            <div className="app__profiles">
-                {abouts.map((about) => (
-                    <motion.div
-                        whileInView={{ opacity: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.5, type: 'tween' }}
-                        className="app__profiles-item"
-                        key={about._id}
-                    >
-                        <img src={about.imageUrl} alt={about.title} />
-                        <h2 className="bold-text" style={{ marginTop: 20 }}>
-                            {about.title}
-                        </h2>
-                        <p className="p-text" style={{ marginTop: 10 }}>
-                            {about.description}
-                        </p>
-                    </motion.div>
-                ))}
+            <div className="app__bio">
+                <motion.div
+                    className="app__bio-photo"
+                    whileInView={{ opacity: [0, 1], y: [40, 0] }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <img src={images.aboutPic} alt="Giancarlo Vera" />
+                </motion.div>
+                <motion.div
+                    className="app__bio-text"
+                    whileInView={{ opacity: [0, 1], y: [40, 0] }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                    <p className="p-text">
+                        I&apos;m a Frontend Developer based in Lima with more
+                        than <strong>7 years of experience</strong> building
+                        interfaces for the web and mobile. I started my path in
+                        software development in Argentina, where I worked as a
+                        freelancer helping small businesses and agencies bring
+                        their ideas online.
+                    </p>
+
+                    <p className="p-text">
+                        Since then I&apos;ve developed corporate sites, landing
+                        pages, dashboards, e-commerce experiences and mobile
+                        apps using{' '}
+                        <strong>React, Next.js and React Native</strong>. I
+                        focus on clean architecture, performance and creating
+                        interfaces that feel simple and intuitive for real
+                        users.
+                    </p>
+
+                    <p className="p-text">
+                        When I&apos;m not coding, you&apos;ll usually find me
+                        birding and doing wildlife photography. That patience
+                        and attention to detail also shape the way I approach UI
+                        work: observing carefully, looking for patterns and
+                        polishing the small details that make an experience feel
+                        alive.
+                    </p>
+                </motion.div>
             </div>
+            <motion.div
+                className="app__bio-stats"
+                whileInView={{ opacity: [0, 1], y: [20, 0] }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
+                {stats &&
+                    stats.map((item) => (
+                        <div className="app__bio-stat" key={item._id}>
+                            <span className="app__bio-stat-value">
+                                {item.value}
+                            </span>
+                            <span className="app__bio-stat-sign">
+                                {item.sign}
+                            </span>
+                            <span className="app__bio-stat-label">
+                                {item.label}
+                            </span>
+                        </div>
+                    ))}
+            </motion.div>
         </>
     )
 }

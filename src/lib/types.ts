@@ -2,6 +2,7 @@
 export enum MenuItems {
     Home = 'HOME',
     About = 'ABOUT',
+    Solutions = 'SOLUTIONS',
     Work = 'WORK',
     Skills = 'SKILLS',
     Testimonials = 'TESTIMONIALS',
@@ -71,12 +72,22 @@ export type Testimonial = {
     imgUrl: string
 }
 
-// Define type for testimonial
-export type About = {
+// Define type for stats
+export type Stats = {
+    value: number
+    _id: string
+    sign: string
+    label: string
+    order: number
+}
+
+// Define type for solution
+export type Solution = {
     title: string
     description: string
     _id: string
     imageUrl: string
+    order: number
 }
 
 // Define type for formdata

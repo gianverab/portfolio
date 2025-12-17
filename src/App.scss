@@ -47,6 +47,13 @@
         text-transform: uppercase;
         color: var(--text-dark);
         font-size: 1rem;
+        display: flex;
+        gap: 0.25rem;
+
+        svg {
+            width: 90px;
+            height: auto;
+        }
 
         &:last-child {
             font-size: 0.8rem;
