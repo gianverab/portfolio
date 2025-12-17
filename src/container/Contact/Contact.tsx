@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { images } from '../../constants'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { client } from '../../sanity/client'
 import './Contact.scss'
@@ -118,7 +117,7 @@ const Contact: React.FC = () => {
 const ContactContainer = AppWrap(
     MotionWrap(Contact, 'app__contact'),
     'contact',
-    'app__whitebg'
+    'app__primarybg'
 )
 
 export default ContactContainer

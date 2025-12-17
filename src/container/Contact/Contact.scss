@@ -60,7 +60,7 @@
         padding: 1rem;
         border-radius: 10px;
         cursor: pointer;
-        background-color: var(--bg);
+        background-color: var(--bg-alt);
         transition: all 0.3s ease-in-out;
 
         @media screen and (max-width: 768px) {
@@ -112,16 +112,15 @@
             width: 100%;
             border-radius: 10px;
             cursor: pointer;
-            background-color: var(--bg);
             transition: all 0.3s ease-in-out;
 
             input,
             textarea {
                 width: 100%;
-                padding: 0.95rem;
+                padding: 0.95rem 1.25rem;
                 border: none;
                 border-radius: 7px;
-                background-color: var(--card-alt);
+                background-color: var(--bg-alt);
                 font-family: var(--font-base);
                 color: var(--text-main);
                 outline: none;

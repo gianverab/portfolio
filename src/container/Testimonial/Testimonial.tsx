@@ -51,7 +51,7 @@ const Testimonials: React.FC = () => {
     return (
         <>
             <h2 className="head-text">
-                My client <span>feedback</span>
+                What <span>people say</span>
             </h2>
             {testimonials.length && (
                 <>
@@ -117,7 +117,7 @@ const Testimonials: React.FC = () => {
 const TestimonialsContainer = AppWrap(
     MotionWrap(Testimonials, 'app__testimonial'),
     'testimonials',
-    'app__primarybg'
+    'app__whitebg'
 )
 
 export default TestimonialsContainer

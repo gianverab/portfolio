@@ -147,7 +147,7 @@ const Work: React.FC = () => {
 const WorkContainer = AppWrap(
     MotionWrap(Work, 'app__works'),
     'work',
-    'app__primarybg'
+    'app__whitebg'
 )
 
 export default WorkContainer

@@ -65,7 +65,7 @@ const Skills: React.FC = () => {
                                 style={
                                     theme === 'dark'
                                         ? {
-                                              backgroundColor: '#232730',
+                                              backgroundColor: '#1a1d24',
                                           }
                                         : { backgroundColor: skill.bgColor }
                                 }
@@ -130,7 +130,7 @@ const Skills: React.FC = () => {
 const SkillsContainer = AppWrap(
     MotionWrap(Skills, 'app__skills'),
     'skills',
-    'app__whitebg'
+    'app__primarybg'
 )
 
 export default SkillsContainer
